@@ -1,0 +1,221 @@
+/* -------------------------------------------
+   RESET + PAGE BASE
+-------------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* -------------------------------------------
+   BACKGROUND
+-------------------------------------------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #7f5af0, #2cb67d);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* This keeps form at top with some space */
+  padding: 40px 0;
+  transition: background 0.5s ease;
+
+  /* Center horizontally ONLY */
+  display: flex;
+  justify-content: center;
+}
+
+body.dark {
+  background: linear-gradient(to right, #1e1e2e, #121212);
+}
+
+/* -------------------------------------------
+   DARK MODE SMALL ICON BUTTON
+-------------------------------------------- */
+.theme-btn {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+
+  font-size: 20px; /* Icon size */
+  color: #fff;
+
+  transition: 0.25s ease;
+}
+
+.theme-btn i {
+  font-size: 20px;
+}
+
+.theme-btn:hover {
+  transform: scale(1.12);
+}
+
+body.dark .theme-btn {
+  color: #f3f3f3;
+}
+
+/* -------------------------------------------
+   FORM CARD
+-------------------------------------------- */
+.form-container {
+  width: 90%;
+  max-width: 780px;
+  background: #ffffffeb;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: slideUp 0.8s ease;
+  transition: 0.4s;
+  backdrop-filter: blur(10px);
+  margin-bottom: 60px; /* allow scroll more naturally */
+}
+
+body.dark .form-container {
+  background: #1e1e2d;
+  color: #e3e3e3;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------
+   TITLE
+-------------------------------------------- */
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2b2f40;
+  margin-bottom: 20px;
+}
+
+body.dark .title {
+  color: #fff;
+}
+
+/* -------------------------------------------
+   INPUT FIELDS
+-------------------------------------------- */
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+body.dark label {
+  color: #ddd;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f7f7f7;
+  transition: 0.3s ease;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: #2b2b3b;
+  color: #fff;
+  border-color: #444;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #7f5af0;
+  box-shadow: 0 0 8px rgba(127, 90, 240, 0.5);
+  transform: scale(1.02);
+}
+
+.error {
+  color: #ff4455;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* -------------------------------------------
+   BUTTON
+-------------------------------------------- */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #7f5af0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #6e4de3;
+  transform: scale(1.03);
+}
+
+button:disabled {
+  background: #b8a4f5;
+  cursor: not-allowed;
+}
+
+body.dark button {
+  background: #4c3bd9;
+}
+
+.success-msg {
+  margin-top: 15px;
+  text-align: center;
+  color: #2cb67d;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+body.dark .success-msg {
+  color: #00ff99;
+}
+
+/* -------------------------------------------
+   RESPONSIVE
+-------------------------------------------- */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .form-container {
+    padding: 30px;
+  }
+}

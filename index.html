@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Intelligent Registration System</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- DARK MODE TOGGLE -->
+  <button id="themeToggle" class="theme-btn">
+     <i class="fa-solid fa-moon" id="themeIcon"></i>
+  </button>
+
+  <div class="background"></div>
+
+  <main class="form-container fade-in">
+    <h1 class="title"><i class="fa-solid fa-user-pen"></i> Registration Form</h1>
+
+    <form id="regForm" novalidate>
+
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-user"></i> First Name *</label>
+          <input id="firstName" required />
+          <small class="error" id="firstNameError"></small>
+        </div>
+
+        <div class="field">
+          <label><i class="fa-solid fa-user"></i> Last Name *</label>
+          <input id="lastName" required />
+          <small class="error" id="lastNameError"></small>
+        </div>
+      </div>
+
+      <div class="field">
+        <label><i class="fa-solid fa-envelope"></i> Email *</label>
+        <input id="email" type="email" required />
+        <small class="error" id="emailError"></small>
+      </div>
+
+      <div class="field">
+        <label><i class="fa-solid fa-phone"></i> Phone Number *</label>
+        <div class="phone-row">
+          <select id="countrySelect"></select>
+          <input id="phone" required />
+        </div>
+        <small class="error" id="phoneError"></small>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-calendar"></i> Age</label>
+          <input id="age" type="number" min="0" max="120" />
+        </div>
+
+        <div class="field">
+          <label><i class="fa-solid fa-venus-mars"></i> Gender *</label>
+          <div class="inline-checks">
+            <label><input type="radio" name="gender" value="Male" />Male</label>
+            <label><input type="radio" name="gender" value="Female" />Female</label>
+            <label><input type="radio" name="gender" value="Other" />Other</label>
+          </div>
+          <small class="error" id="genderError"></small>
+        </div>
+      </div>
+
+      <div class="field">
+        <label><i class="fa-solid fa-location-dot"></i> Address</label>
+        <textarea id="address" rows="2"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-earth-asia"></i> Country *</label>
+          <select id="country"></select>
+        </div>
+
+        <div class="field">
+          <label><i class="fa-solid fa-map"></i> State *</label>
+          <select id="state"></select>
+        </div>
+
+       <div class="field">
+  <label><i class="fa-solid fa-city"></i> City *</label>
+  <input id="city" type="text" placeholder="Enter your city" required />
+  <small class="error" id="cityError"></small>
+</div>
+
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-key"></i> Password *</label>
+          <input id="password" type="password" required />
+          <meter id="pwStrength" min="0" max="4" value="0"></meter>
+          <small id="pwText"></small>
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="field">
+          <label><i class="fa-solid fa-unlock-keyhole"></i> Confirm Password *</label>
+          <input id="confirmPassword" type="password" required />
+          <small class="error" id="confirmPasswordError"></small>
+        </div>
+      </div>
+
+      <div class="field terms">
+        <label>
+          <input id="terms" type="checkbox" />
+          <i class="fa-solid fa-file-signature"></i> I agree to the Terms & Conditions *
+        </label>
+        <small class="error" id="termsError"></small>
+      </div>
+
+      <button id="submitBtn" disabled><i class="fa-solid fa-paper-plane"></i> Submit</button>
+
+      <div id="formMessages" class="success-msg"></div>
+
+    </form>
+  </main>
+
+<script src="script.js"></script>
+<script src = "theme.js"></script>
+
+</body>
+</html>
